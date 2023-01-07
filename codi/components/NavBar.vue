@@ -15,10 +15,18 @@
                 tlas-Expo
             </v-toolbar-title>
             <v-spacer />
-            <v-btn nuxt to="/products" icon>
+            <v-btn nuxt to="/products" class="mr-md-2" icon>
                 <v-icon size="20" color="yellow">mdi-store-outline</v-icon>
             </v-btn>
-            <v-btn icon>
+            <v-badge 
+                overlap 
+                v-if="$store.state.cart.cart.length > 0"
+                :content="`${$store.state.cart.cart.length}`" >
+                <v-btn nuxt to="/cart" icon>
+                    <v-icon size="20" color="green">mdi-cart-outline</v-icon>
+                </v-btn>
+            </v-badge>
+            <v-btn nuxt to="/cart" v-else icon>
                 <v-icon size="20" color="green">mdi-cart-outline</v-icon>
             </v-btn>
             <v-divider vertical></v-divider>

@@ -29,7 +29,7 @@
                     <v-row>
                         <template v-for="(p, i) in filteredProducts">
                             <v-col cols="12" md="6" :key="`product${p.id}-${i}`">
-                                <v-card link color="surface" class="el ma-2 mb-5 mr-5">
+                                <v-card nuxt :to="`/products/${p.id}`" color="surface" class="el ma-2 mb-5 mr-5">
                                     <v-img :src="p.image" height="300">
                                         <template #placeholder>
                                             <v-row 
@@ -49,7 +49,7 @@
                                         {{ p.name }}
                                     </v-card-title>
                                     <v-card-subtitle class="primary--text" pb-3>
-                                        {{ p.price }}
+                                        {{ $formatMoney(p.price) }}
                                     </v-card-subtitle>
                                     <v-card-text>
                                         <v-chip 
