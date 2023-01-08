@@ -7,6 +7,17 @@
 
         </div>
         <v-container>
+            <div class="mb-3" v-if="$store.state.cart.cart.length>0">
+                <v-btn
+                    nuxt
+                    to="/cart/confirm"
+                    min-width="150"
+                    mon-height="45"
+                    color="primary"
+                >
+                    Checkout
+                </v-btn>
+            </div>
             <v-row>
                 <template v-for="(c, i) in $store.state.cart.cart">
                     <v-col :key="`cartItem${i}`">
