@@ -1,6 +1,6 @@
 <template>
-    <v-carousel height="100vh" hide-delimiter-background>
-      <template #prev="{ attrs, on }">
+    <v-carousel height="100vh" hide-delimiter-background show-arrows-on-hover>
+      <template v-slot:prev="{ attrs, on }">
         <v-btn v-bind="attrs" v-on="on" color="transparent" fab depressed>
           <v-icon size="20">mdi-arrow-left</v-icon>
         </v-btn>
@@ -20,8 +20,8 @@
           ></v-progress-circular>
         </v-row>
       </template>
-      <v-carousel-item v-for="(p, i) in sale_items" :key="`saleitem${i}`">
-        <v-img height="100vh" :src="p.image">
+      <v-carousel-item v-for="(p, i) in sale_items" :key="`saleItem${i}`">
+        <v-img height="100vh" :src="p.image" >
           <v-container class="fill-height">
             <v-row dense align="center">
               <v-col md="7">

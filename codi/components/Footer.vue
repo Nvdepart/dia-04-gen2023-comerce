@@ -17,7 +17,9 @@
                 >{{s.icon}}</v-icon>
             </v-btn> 
         </div>
-        <span>&copy; {{ new Date().getFullYear() }}</span>
+        <v-card-text  class="py-3 font-weight-bold text-center">
+            {{ new Date().getFullYear() }} — <strong>Atlas-Expo</strong>
+          </v-card-text>
     </v-card>
 </template>
 
